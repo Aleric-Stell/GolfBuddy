@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "1RN47Lvo9x8l+qKgZ2JHg+dMxOmO7BH3R85UmCKTIX4=",
+  "Source": "GolfBuddy.Api",
+  "BasePath": "_content/GolfBuddy.Api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

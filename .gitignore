@@ -1,0 +1,17 @@
+# .NET (backend)
+backend/**/*.bin/
+backend/**/*.obj/
+backend/**/*.user
+backend/**/*.suo
+backend/**/*.pdb
+backend/**/*.dll
+backend/**/*.exe
+
+# LocalDB / SQL Server
+backend/**/*.mdf
+backend/**/*.ldf
+
+# Node / Vue (frontend)
+frontend/node_modules/
+frontend/dist/
+frontend/.env

@@ -17,7 +17,7 @@ namespace GolfBuddy.Api.Models
 
         // Foreign Key
         public int CourseId { get; set; }
-        public required Course Course { get; set; }
+        public Course? Course { get; set; }
 
         public ICollection<Shot> Shots { get; set; } = new List<Shot>();
     }

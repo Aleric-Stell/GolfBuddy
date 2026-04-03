@@ -16,6 +16,5 @@ namespace GolfBuddy.Api.Models
         public int DistanceYards { get; set; }
 
         public required string Club { get; set; }
-        public string? Result { get; set; } // e.g., Fairway, Green, Sand, Water
     }
 }

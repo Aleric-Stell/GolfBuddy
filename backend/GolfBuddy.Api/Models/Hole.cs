@@ -7,11 +7,9 @@ namespace GolfBuddy.Api.Models
     {
         public int Id { get; set; }
 
-        [Required]
-        public int HoleNumber { get; set; }
+        public required int HoleNumber { get; set; }
 
-        [Required]
-        public int Par { get; set; }
+        public required int Par { get; set; }
 
         public int Yardage { get; set; }
 

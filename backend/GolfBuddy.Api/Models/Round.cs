@@ -7,7 +7,6 @@ namespace GolfBuddy.Api.Models
     public class Round
     {
         public int Id { get; set; }
-
   
         public DateTime DatePlayed { get; set; }
 
@@ -17,7 +16,5 @@ namespace GolfBuddy.Api.Models
 
         public int? CourseId { get; set; }
         public required Course Course { get; set; }
-
-        public ICollection<Shot> Shots { get; set; } = new List<Shot>();
     }
 }

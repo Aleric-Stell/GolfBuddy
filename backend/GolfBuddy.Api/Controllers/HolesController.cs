@@ -1,7 +1,7 @@
-using Microsoft.AspNetCore.Mvs;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Api.Data;
-using Microsoft.Api.Models;
+using GolfBuddy.Api.Data;
+using GolfBuddy.Api.Models;
 
 namespace GolfBuddy.Api.Controller
 {

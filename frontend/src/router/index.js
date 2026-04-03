@@ -1,10 +1,9 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import Home from '../views/Home.vue'
-import Login from '../views/Login.vue'
+import CoursesView from "../views/CoursesView.vue";
 
 const routes = [
-  { path: '/', component: Home },
-  { path: '/login', component: Login }
+  { path: '/', redirect: '/courses' },
+  { path: '/courses', component: CoursesView }
 ]
 
 const router = createRouter({

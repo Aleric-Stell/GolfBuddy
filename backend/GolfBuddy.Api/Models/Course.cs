@@ -12,5 +12,6 @@ namespace GolfBuddy.Api.Models
         public string? Location { get; set; }
 
         public ICollection<Hole> Holes { get; set; } = new List<Hole>();
+        public ICollection<Round> Rounds { get; set; } = new List<Round>();
     }
 }

@@ -1,0 +1,333 @@
+:root {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #112018;
+  background:
+    radial-gradient(circle at top left, rgba(177, 210, 160, 0.45), transparent 28%),
+    linear-gradient(180deg, #eef6e8 0%, #dfeedd 48%, #f9f6ea 100%);
+  line-height: 1.5;
+  font-weight: 400;
+  --card-bg: rgba(255, 255, 255, 0.82);
+  --card-border: rgba(17, 32, 24, 0.09);
+  --text-muted: #4b5d52;
+  --accent: #1f6f43;
+  --accent-dark: #154f30;
+  --danger: #aa3d2b;
+  --good: #117a44;
+  --bad: #9d3c22;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+input,
+select {
+  width: 100%;
+  margin-top: 0.35rem;
+  padding: 0.8rem 0.95rem;
+  border: 1px solid #bfd1c1;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.92);
+}
+
+button {
+  border: 0;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.app-shell {
+  min-height: 100vh;
+  padding: 1.5rem;
+}
+
+.topbar,
+.card {
+  backdrop-filter: blur(10px);
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  box-shadow: 0 14px 40px rgba(40, 67, 48, 0.08);
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: center;
+  padding: 1.25rem 1.4rem;
+  border-radius: 28px;
+}
+
+.topbar h1,
+.card h2,
+.card h3,
+.card p {
+  margin: 0;
+}
+
+.page-shell {
+  max-width: 1400px;
+  margin: 1.5rem auto 0;
+}
+
+.page-grid,
+.detail-grid {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.page-grid {
+  grid-template-columns: minmax(340px, 520px) 1fr;
+}
+
+.detail-grid {
+  grid-template-columns: 1.1fr 0.9fr;
+}
+
+.span-two {
+  grid-column: span 2;
+}
+
+.card {
+  border-radius: 28px;
+  padding: 1.4rem;
+}
+
+.eyebrow {
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.muted {
+  color: var(--text-muted);
+}
+
+.nav-links {
+  display: flex;
+  gap: 0.85rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.nav-links a {
+  padding: 0.55rem 0.9rem;
+  border-radius: 999px;
+  background: rgba(31, 111, 67, 0.08);
+}
+
+.user-pill {
+  padding: 0.55rem 0.9rem;
+  border-radius: 999px;
+  background: rgba(17, 32, 24, 0.08);
+}
+
+.primary-button,
+.ghost-button,
+.danger-button,
+.link-button {
+  padding: 0.8rem 1.1rem;
+  font-weight: 600;
+}
+
+.primary-button {
+  background: linear-gradient(135deg, var(--accent) 0%, #78a040 100%);
+  color: white;
+}
+
+.ghost-button,
+.link-button {
+  background: rgba(31, 111, 67, 0.08);
+  color: var(--accent-dark);
+}
+
+.danger-button {
+  background: rgba(170, 61, 43, 0.12);
+  color: var(--danger);
+}
+
+.stack-form {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.stack-form label {
+  font-weight: 600;
+}
+
+.section-heading,
+.course-card__header,
+.shot-card__header {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.holes-grid,
+.shots-grid {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.holes-grid {
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+}
+
+.hole-editor,
+.course-card,
+.shot-card,
+.score-stat,
+.round-card {
+  border-radius: 20px;
+  padding: 1rem;
+  background: rgba(244, 248, 240, 0.95);
+  border: 1px solid rgba(17, 32, 24, 0.08);
+}
+
+.course-stack,
+.rounds-stack {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.round-card {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: center;
+}
+
+.round-card__stats {
+  display: flex;
+  gap: 0.9rem;
+  flex-wrap: wrap;
+  font-weight: 600;
+}
+
+.scoreboard {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1.25rem;
+}
+
+.score-stat span {
+  display: block;
+  color: var(--text-muted);
+}
+
+.score-stat strong {
+  display: block;
+  margin-top: 0.3rem;
+  font-size: 1.85rem;
+}
+
+.scorecard-table {
+  margin-top: 1.2rem;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid rgba(17, 32, 24, 0.08);
+}
+
+.scorecard-row {
+  display: grid;
+  grid-template-columns: 0.9fr 0.9fr 1fr 1fr 1fr;
+  gap: 0.75rem;
+  padding: 0.9rem 1rem;
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.scorecard-row:nth-child(even) {
+  background: rgba(234, 242, 230, 0.85);
+}
+
+.scorecard-head {
+  font-weight: 700;
+  background: rgba(31, 111, 67, 0.14);
+}
+
+.shots-grid {
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  margin-top: 1rem;
+}
+
+.score-good {
+  color: var(--good);
+}
+
+.score-bad {
+  color: var(--bad);
+}
+
+.score-even {
+  color: var(--accent-dark);
+}
+
+.error-text {
+  color: var(--danger);
+  font-weight: 600;
+}
+
+.auth-page {
+  display: grid;
+  place-items: center;
+  min-height: calc(100vh - 180px);
+}
+
+.auth-card {
+  width: min(100%, 540px);
+}
+
+.stat-line {
+  margin-top: 0.7rem;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+@media (max-width: 980px) {
+  .page-grid,
+  .detail-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .span-two {
+    grid-column: span 1;
+  }
+
+  .topbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .scoreboard {
+    grid-template-columns: 1fr;
+  }
+
+  .round-card,
+  .section-heading,
+  .course-card__header,
+  .shot-card__header {
+    flex-direction: column;
+  }
+}

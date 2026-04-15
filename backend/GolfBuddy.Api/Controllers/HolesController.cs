@@ -1,12 +1,15 @@
+using GolfBuddy.Api.Data;
+using GolfBuddy.Api.Infrastructure;
+using GolfBuddy.Api.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using GolfBuddy.Api.Data;
-using GolfBuddy.Api.Models;
 
-namespace GolfBuddy.Api.Controller
+namespace GolfBuddy.Api.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
+    [Authorize]
     public class HolesController : ControllerBase
     {
         private readonly GolfBuddyDbContext _context;
@@ -49,6 +52,7 @@ namespace GolfBuddy.Api.Controller
 
         // POST: api/Holes
         [HttpPost]
+        [Authorize(Roles = AuthConstants.AdminRole)]
         public async Task<ActionResult<Hole>> CreateHole(Hole hole)
         {
 
@@ -64,6 +68,7 @@ namespace GolfBuddy.Api.Controller
 
         // PUT: api/Holes/5
         [HttpPut("{id}")]
+        [Authorize(Roles = AuthConstants.AdminRole)]
         public async Task<IActionResult> UpdateHole(int id, Hole hole)
         {
             if (id != hole.Id)
@@ -86,6 +91,7 @@ namespace GolfBuddy.Api.Controller
 
         // DELETE: api/Holes/5
         [HttpDelete("{id}")]
+        [Authorize(Roles = AuthConstants.AdminRole)]
         public async Task<IActionResult> DeleteHole(int id)
         {
             var hole = await _context.Holes.FindAsync(id);

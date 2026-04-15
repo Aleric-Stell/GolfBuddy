@@ -1,4 +1,5 @@
 using GolfBuddy.Api.Data;
+using GolfBuddy.Api.Infrastructure;
 using GolfBuddy.Api.Models;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
@@ -24,9 +25,11 @@ builder.Services.AddDbContext<GolfBuddyDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 // Identity
-builder.Services.AddIdentity<IdentityUser, IdentityRole>()
+builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
     .AddEntityFrameworkStores<GolfBuddyDbContext>()
     .AddDefaultTokenProviders();
+builder.Services.AddAuthorization();
+builder.Services.AddScoped<TokenService>();
 
 // JWT Authentication
 builder.Services.AddAuthentication(options =>
@@ -56,13 +59,22 @@ builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
+using (var scope = app.Services.CreateScope())
+{
+    var dbContext = scope.ServiceProvider.GetRequiredService<GolfBuddyDbContext>();
+    dbContext.Database.Migrate();
+}
+
+await SeedData.InitializeAsync(app.Services);
+
 app.UseSwagger();
 app.UseSwaggerUI();
 
 app.UseHttpsRedirection();
+app.UseCors("AllowVue");
 app.UseAuthentication();
 app.UseAuthorization();
-app.UseCors("AllowVue");
+
 
 app.MapControllers();
 

@@ -8,6 +8,5 @@ namespace GolfBuddy.Api.Models
         public double Handicap { get; set; } = 0;
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
         public ICollection<Round> Rounds { get; set; } = new List<Round>();
-        public ICollection<Shot> Shots { get; set; } = new List<Shot>();
     }
 }
